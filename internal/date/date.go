@@ -27,7 +27,7 @@ func tZoneCheck(stringDate string) (matched bool) {
 }
 */
 
-func GetDateLayot(stringDate string) (matchingLayouts []DateTimeLayouts, err error) {
+func GetDateLayout(stringDate string) (matchingLayouts []DateTimeLayouts, err error) {
 	log.Println("INVOKE GetDateLayot")
 
 	format := DATE_LAYOUT_1.Format()
