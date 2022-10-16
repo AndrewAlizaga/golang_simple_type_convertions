@@ -9,4 +9,4 @@ current development
 
 1 - Obtain a date layout and it's format from a string with no futher indications
 
-2 - regulat date equations
+2 - regular date equations
