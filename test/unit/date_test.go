@@ -13,7 +13,7 @@ func TestLayoutFormat(t *testing.T) {
 
 	t.Log("starting test")
 
-	layouts, err := datev1.GetDateLayot("04/02/22")
+	layouts, err := datev1.GetDateLayout("04/02/22")
 
 	if err != nil {
 		t.Logf("TEST HAS FAILED")
