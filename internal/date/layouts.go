@@ -1,7 +1,5 @@
 package date
 
-import "errors"
-
 type DateTimeLayouts int32
 
 const (
@@ -29,14 +27,32 @@ const (
 	TIME_LAYOUT_4 DateTimeLayouts = iota
 
 	//Date Time Layouts
-	DATE_TIME_LAYOUT_1 DateTimeLayouts = iota
-	DATE_TIME_LAYOUT_2 DateTimeLayouts = iota
-	DATE_TIME_LAYOUT_3 DateTimeLayouts = iota
-	DATE_TIME_LAYOUT_4 DateTimeLayouts = iota
-	DATE_TIME_LAYOUT_5 DateTimeLayouts = iota
+	DATE_TIME_LAYOUT_1            DateTimeLayouts = iota
+	DATE_TIME_LAYOUT_2            DateTimeLayouts = iota
+	DATE_TIME_LAYOUT_3            DateTimeLayouts = iota
+	DATE_TIME_LAYOUT_4            DateTimeLayouts = iota
+	DATE_TIME_LAYOUT_5            DateTimeLayouts = iota
+	DATE_TIME_LAYOUT_Layout       DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_ANSIC       DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_UnixDate    DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RubyDate    DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC822      DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC822Z     DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC850      DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC1123     DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC1123Z    DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC3339     DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_RFC3339Nano DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_Kitchen     DateTimeLayouts = iota
+
+	// Handy time stamps.
+	DATE_TIME_LAYOUTS_Stamp      DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_StampMilli DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_StampMicro DateTimeLayouts = iota
+	DATE_TIME_LAYOUTS_StampNano  DateTimeLayouts = iota
 )
 
-func (e DateTimeLayouts) Format() (format string, err error) {
+func (e DateTimeLayouts) Format() (format string) {
 
 	switch e {
 
@@ -112,8 +128,56 @@ func (e DateTimeLayouts) Format() (format string, err error) {
 	case DATE_TIME_LAYOUT_5:
 		format = "Mon, 2 Jan 2006 15:04:05 MST"
 
+	case DATE_TIME_LAYOUT_Layout:
+		format = "01/02 03:04:05PM '06 -0700"
+
+	case DATE_TIME_LAYOUTS_ANSIC:
+		format = "Mon Jan _2 15:04:05 2006"
+
+	case DATE_TIME_LAYOUTS_UnixDate:
+		format = "Mon Jan _2 15:04:05 MST 2006"
+
+	case DATE_TIME_LAYOUTS_RubyDate:
+		format = "Mon Jan 02 15:04:05 -0700 2006"
+
+	case DATE_TIME_LAYOUTS_RFC822:
+		format = "02 Jan 06 15:04 MST"
+
+	case DATE_TIME_LAYOUTS_RFC822Z:
+		format = "02 Jan 06 15:04 -0700"
+
+	case DATE_TIME_LAYOUTS_RFC850:
+		format = "Monday, 02-Jan-06 15:04:05 MST"
+
+	case DATE_TIME_LAYOUTS_RFC1123:
+		format = "Mon, 02 Jan 2006 15:04:05 MST"
+
+	case DATE_TIME_LAYOUTS_RFC1123Z:
+		format = "Mon, 02 Jan 2006 15:04:05 -0700"
+
+	case DATE_TIME_LAYOUTS_RFC3339:
+		format = "2006-01-02T15:04:05Z07:00"
+
+	case DATE_TIME_LAYOUTS_RFC3339Nano:
+		format = "2006-01-02T15:04:05.999999999Z07:00"
+
+	case DATE_TIME_LAYOUTS_Kitchen:
+		format = "3:04PM"
+
+	case DATE_TIME_LAYOUTS_Stamp:
+		format = "Jan _2 15:04:05"
+
+	case DATE_TIME_LAYOUTS_StampMilli:
+		format = "Jan _2 15:04:05.000"
+
+	case DATE_TIME_LAYOUTS_StampMicro:
+		format = "Jan _2 15:04:05.000000"
+
+	case DATE_TIME_LAYOUTS_StampNano:
+		format = "Jan _2 15:04:05.000000000"
+
 	default:
-		err = errors.New("Date Layout Not Supported... Yet :( ")
+		format = ""
 	}
 
 	return
