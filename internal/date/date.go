@@ -322,3 +322,5 @@ func GetDateLayout(stringDate string) (matchingLayouts []DateTimeLayouts, err er
 	log.Println(matchingLayouts)
 	return
 }
+
+

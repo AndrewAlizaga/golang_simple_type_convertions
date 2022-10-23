@@ -2,6 +2,9 @@ package date
 
 type DateTimeLayouts int32
 
+type Language int32
+
+
 const (
 
 	//Date Layouts
@@ -50,6 +53,12 @@ const (
 	DATE_TIME_LAYOUTS_StampMilli DateTimeLayouts = iota
 	DATE_TIME_LAYOUTS_StampMicro DateTimeLayouts = iota
 	DATE_TIME_LAYOUTS_StampNano  DateTimeLayouts = iota
+)
+
+
+const (
+	LANGUAGE_ENGLISH Language = iota
+	LANGUAGE_SPANISH Language = iota
 )
 
 func (e DateTimeLayouts) Format() (format string) {
@@ -183,3 +192,18 @@ func (e DateTimeLayouts) Format() (format string) {
 	return
 
 }
+
+
+// Spanish DAYS
+var SpanishDays = [...]string{"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"}
+
+// English DAYS
+var EnglishDays = [...]string{"Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+
+// Spanish Months
+var SpanishMonths = [...]string{"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+	"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}
+
+// English Months
+var EnglishMonths = [...]string{"January", "February", "March", "April", "May", "June", "July",
+	"Agust", "September", "October", "November", "December"}
