@@ -23,8 +23,8 @@ func DateParseSpeech(date time.Time, language datev1.Language) (speech string, e
 
 //Access point for lib consumption
 //Get 
-func FindDatesOnText(speech string) (dates []time.Time){
-	speech, err = datev1.GetSpeech(date, language)
-	return
-}
+//func FindDatesOnText(speech string) (dates []time.Time){
+//	speech, err = datev1.GetSpeech(date, language)
+//	return
+//}
 
