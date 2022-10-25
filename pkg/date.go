@@ -21,21 +21,10 @@ func DateParseSpeech(date time.Time, language datev1.Language) (speech string, e
 	return
 }
 
-/*
+//Access point for lib consumption
+//Get 
+//func FindDatesOnText(speech string) (dates []time.Time){
+//	speech, err = datev1.GetSpeech(date, language)
+//	return
+//}
 
-// LATAM DAYS ARRAY
-var latamDays = [...]string{"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"}
-
-// USA DAYS ARRAY
-var usaDays = [...]string{"Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
-
-// LATAM DAYS ARRAY
-var latamMonths = [...]string{"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-	"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}
-
-// USA Months ARRAY
-var usaMonths = [...]string{"January", "February", "March", "April", "May", "June", "July",
-	"Agust", "September", "October", "November", "December"}
-
-
-*/
