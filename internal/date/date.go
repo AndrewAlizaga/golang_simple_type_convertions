@@ -324,3 +324,9 @@ func GetDateLayout(stringDate string) (matchingLayouts []DateTimeLayouts, err er
 }
 
 
+//experimental
+func FindDateMentions(fullSpeech string) ([]time.Time, err error){
+	for currentIdx, chr := range fullSpeech{
+		
+	}
+}
